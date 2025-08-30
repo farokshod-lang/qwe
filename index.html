@@ -1,58 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>قلعة حلب — دخول/تسجيل</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
-  <meta name="description" content="واجهة بسيطة تعرض صورة قلعة حلب مع زرين: تسجيل الدخول والتسجيل. مناسبة للنشر على Vercel عبر GitHub.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>قلعة حلب</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="hero">
-    <figure class="hero__image">
-      <!-- مصدر صورة عامة لقلعة حلب -->
+  <main class="page">
+    <h1 class="title">قلعة حلب</h1>
+
+    <!-- صورة قلعة حلب -->
+    <div class="image-box">
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Aleppo_Citadel_2010.jpg/1280px-Aleppo_Citadel_2010.jpg"
-        alt="قلعة حلب"
-        loading="eager"
-        decoding="async"
-        width="1280"
-        height="853"
-      >
-      <figcaption class="sr-only">صورة لقلعة حلب التاريخية</figcaption>
-    </figure>
+        class="citadel"
+        src="https://upload.wikimedia.org/wikipedia/commons/4/48/Aleppo_Citadel_2010.jpg"
+        alt="صورة واضحة لقلعة حلب"
+      />
+    </div>
 
-    <section class="hero__content">
-      <h1>أهلًا بك في موقعك</h1>
-      <p class="subtitle">ابدأ رحلتك من هنا — اختر ما يناسبك</p>
-
-      <div class="actions">
-        <a class="btn btn--primary" href="/login" aria-label="انتقال إلى صفحة تسجيل الدخول">تسجيل الدخول</a>
-        <a class="btn btn--ghost" href="/signup" aria-label="انتقال إلى صفحة التسجيل">التسجيل</a>
-      </div>
-    </section>
+    <div class="actions">
+      <a class="btn btn-primary" href="#register">تسجيل</a>
+      <a class="btn btn-outline" href="#login">تسجيل دخول</a>
+    </div>
   </main>
-
-  <footer class="footer">
-    <small>واجهة تجريبية — جاهزة للنشر على Vercel</small>
-  </footer>
-
-  <script>
-    // تحسين بسيط للتصفح في بيئات لا تملك صفحات فعلية /login و /signup
-    // في حالة فتح الملفات محليًا، سنمنع الأخطاء ونظهر رسالة.
-    function handleFakeRoutes(e) {
-      const isLocal = location.protocol === "file:";
-      if (isLocal) {
-        e.preventDefault();
-        alert("هذه روابط تجريبية. عند النشر على Vercel، اربطها بصفحاتك الفعلية /login و /signup.");
-      }
-    }
-    document.querySelectorAll('a[href="/login"], a[href="/signup"]').forEach((a) => {
-      a.addEventListener("click", handleFakeRoutes);
-    });
-  </script>
 </body>
 </html>
